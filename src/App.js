@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import ReservaList from './components/ReservaList';
+import ReservaEdit from './components/ReservaEdit';
+// ... outras importações
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Navigate to="/reservas" />} /> {/* Redireciona para /reservas */}
+                <Route path="/reservas" element={<ReservaList />} />
+                <Route path="/reservas/edit/:id" element={<ReservaEdit />} />
+                {/* Outras rotas */}
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;
