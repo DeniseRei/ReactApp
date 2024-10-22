@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'; // Importe Link para usar a navegação
 import axiosConfig from '../AxiosConfig'; // Caminho para o axiosConfig
 
 const ReservaList = () => {
+    <Link to="/reservas/cadastrar">Cadastrar Nova Reserva</Link>
     const [reservas, setReservas] = useState([]);
 
     const fetchReservas = async () => {
